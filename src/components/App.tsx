@@ -4,7 +4,7 @@ import {Location} from 'history';
 import React from 'react';
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import {ScrollToTop} from './basics';
-import {Top} from './pages';
+import {A, B, C, D, E, Root} from './pages';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +30,12 @@ const Component: React.FC = () => {
         {/* ツールバーと画面コンポーネントがかぶらないように */}
         <div className={classes.fakeToolbar} />
         <Switch>
-          <Route exact path={PAGE_LINK.ROOT} component={Top} />
+          <Route exact path={PAGE_LINK.ROOT} component={Root} />
+          <Route exact path={PAGE_LINK.A} component={A} />
+          <Route exact path={PAGE_LINK.B} component={B} />
+          <Route exact path={PAGE_LINK.C} component={C} />
+          <Route exact path={PAGE_LINK.D} component={D} />
+          <Route exact path={PAGE_LINK.E} component={E} />
         </Switch>
       </div>
     </Router>

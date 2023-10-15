@@ -340,8 +340,9 @@ export const PAGE_LINK = {
    * ルートページのリンク
    */
   ROOT: '/',
-  /**
-   * サービス停止エラー画面
-   */
-  ERROR_SERVICE_STOP: '/error/service-stop',
+  A: '/a',
+  B: '/b',
+  C: '/c',
+  D: '/d',
+  E: '/e',
 };
