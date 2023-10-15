@@ -1,0 +1,57 @@
+{
+  "short_name": "frontend-training",
+  "name": "frontend-training",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0a3cff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "image/icon/icon_x48.png",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "maskable"
+    },
+    {
+      "src": "image/icon/icon_x72.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "maskable"
+    },
+    {
+      "src": "image/icon/icon_x96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "maskable"
+    },
+    {
+      "src": "image/icon/icon_x128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "maskable"
+    },
+    {
+      "src": "image/icon/icon_x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "image/icon/icon_x384.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "maskable"
+    },
+    {
+      "src": "image/icon/icon_x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}

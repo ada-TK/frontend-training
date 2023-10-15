@@ -1,0 +1,50 @@
+{
+  "files.watcherExclude": {
+    "public/**": true,
+    "build/**": true,
+    "src/api-client/**": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll.eslint": true
+  },
+  "cSpell.words": [
+    "CSRF",
+    "Corretto",
+    "Flalogic",
+    "Fontawsome",
+    "GITLAB",
+    "Signup",
+    "Tance",
+    "apexcharts",
+    "brigtness",
+    "browserslist",
+    "classname",
+    "datatables",
+    "heatmap",
+    "linebreak",
+    "markdownlint",
+    "mixins",
+    "msedge",
+    "multiline",
+    "notistack",
+    "openapi",
+    "openapitools",
+    "preinstall",
+    "signout",
+    "testid",
+    "textlint",
+    "tinycolor",
+    "toastify",
+    "tp",
+    "unmount",
+    "wdyr",
+    "welldone",
+    "yrange",
+    "zenkaku"
+  ]
+}

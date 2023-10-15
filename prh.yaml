@@ -1,0 +1,18 @@
+version: 1
+rules:
+  - expected: VS Code
+    patterns: VSCode
+    prh: 公式サイトによるとVS Codeらしい
+  - expected: macOS
+    patterns: MacOS
+    prh:
+  - expected: Docker
+    patterns: docker
+  - expected: ユーザ
+    patterns: ユーザー
+  - expected: サーバ
+    patterns: サーバー
+  - expected: スキーマ
+    patterns: スキーマー
+  - expected: ToDo
+    patterns: Todo

@@ -1,0 +1,231 @@
+{
+  "name": "frontend-training",
+  "homepage": "/frontend-training",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=14.x <17",
+    "yarn": "【お願い】yarnではなくnpmを使ってください"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "axios": "^0.25.0",
+    "classnames": "^2.3.1",
+    "notistack": "^1.0.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.25.3",
+    "react-query": "^3.34.12",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "5.0.1",
+    "tinycolor2": "^1.4.2",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "cross-env GENERATE_SOURCEMAP=\"false\" react-scripts start",
+    "build": "cross-env GENERATE_SOURCEMAP=\"false\" react-scripts build",
+    "test": "react-scripts test",
+    "test:unit": "cross-env JEST_HTML_REPORTERS_PUBLIC_PATH=\"report\" JEST_HTML_REPORTERS_FILE_NAME=\"test.html\" JEST_JUNIT_OUTPUT_FILE=\"report/test.xml\"  react-scripts test --watchAll=false --coverage --reporters=jest-junit --reporters=jest-html-reporters",
+    "gen-client": "rimraf ./src/api-client && openapi-generator-cli generate -g typescript-axios --enable-post-process-file -i ./schema.yaml -o ./src/api-client",
+    "e2e:run-mock": "prism mock ./schema.yaml -p 3100",
+    "e2e:kill-mock": "kill-port 3100",
+    "lint": "run-p --print-name --continue-on-error lint:*",
+    "lint:es": "eslint --max-warnings=0 --ext .jsx,.js,.tsx,.ts .",
+    "lint:text": "textlint \"*.md\" \"!(node_modules|build)/**/*.md\"",
+    "lint:tsc": "tsc --noEmit",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+    "ci-lint-and-report": "run-p --print-name --continue-on-error report:* lint:tsc lint:md",
+    "report:es": "eslint --max-warnings=0 --ext .jsx,.js,.tsx,.ts --format html --output-file ./report/eslint.html .",
+    "report:text": "textlint --format junit --output-file ./report/textlint.xml \"*.md\" \"!(node_modules|build)/**/*.md\"",
+    "fix": "run-s --print-name --continue-on-error fix:*",
+    "fix:es": "eslint --fix --ext .jsx,.js,.tsx,.ts .",
+    "fix:text": "textlint --fix \"*.md\" \"!(node_modules|build)/**/*.md\"",
+    "fix:md": "markdownlint-cli2-fix \"**/*.md\" \"#node_modules\"",
+    "prepare": "husky install",
+    "delete-cache": "rimraf node_modules/.cache/.eslintcache"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "ignorePatterns": [
+      "build/*",
+      "src/api-client/*",
+      "*.test.ts",
+      "*.test.tsx",
+      "*.js"
+    ],
+    "overrides": [
+      {
+        "parserOptions": {
+          "project": "./tsconfig.json"
+        },
+        "files": [
+          "*.ts",
+          "*.tsx",
+          "*.d.ts"
+        ],
+        "extends": [
+          "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        ]
+      }
+    ],
+    "rules": {
+      "@typescript-eslint/no-unsafe-assignment": "error",
+      "@typescript-eslint/no-unsafe-member-access": "error",
+      "@typescript-eslint/no-unsafe-call": "error",
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "semi-spacing": [
+        "error",
+        {
+          "after": true,
+          "before": false
+        }
+      ],
+      "semi-style": [
+        "error",
+        "last"
+      ],
+      "no-extra-semi": "error",
+      "no-unexpected-multiline": "error",
+      "no-unreachable": "error",
+      "comma-dangle": [
+        "error",
+        {
+          "arrays": "only-multiline",
+          "objects": "only-multiline",
+          "imports": "only-multiline",
+          "exports": "only-multiline",
+          "functions": "only-multiline"
+        }
+      ],
+      "no-console": [
+        "warn",
+        {
+          "allow": [
+            "error"
+          ]
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@material-ui/types": "^5.1.0",
+    "@openapitools/openapi-generator-cli": "^2.4.26",
+    "@stoplight/prism-cli": "^4.6.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^26.0.23",
+    "@types/jest-image-snapshot": "^4.3.1",
+    "@types/node": "^16.11.21",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/tinycolor2": "^1.4.3",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "@welldone-software/why-did-you-render": "^6.2.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "jest": "^26.6.0",
+    "jest-html-reporters": "^3.0.5",
+    "jest-image-snapshot": "^4.5.1",
+    "jest-junit": "^13.0.0",
+    "jest-playwright-preset": "^1.7.0",
+    "kill-port": "^1.6.1",
+    "lint-staged": "^12.3.3",
+    "markdownlint-cli2": "^0.4.0",
+    "npm-run-all": "^4.1.5",
+    "playwright": "^1.18.1",
+    "playwright-firefox": "^1.18.1",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "textlint": "^12.1.0",
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-rule-preset-ja-spacing": "^2.2.0",
+    "textlint-rule-preset-ja-technical-writing": "^7.0.0",
+    "textlint-rule-preset-jtf-style": "^2.3.12",
+    "textlint-rule-prh": "^5.3.0",
+    "ts-jest": "^26.5.5",
+    "typescript": "^4.3.5"
+  },
+  "jest": {
+    "coverageReporters": [
+      "cobertura",
+      "lcov",
+      "text-summary"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/api-client/"
+    ],
+    "moduleNameMapper": {
+      "react-markdown": "<rootDir>/__mocks__/empty.js",
+      "rehype": "<rootDir>/__mocks__/empty.js"
+    }
+  },
+  "jest-junit": {
+    "suiteNameTemplate": "{filepath}",
+    "classNameTemplate": "{classname}",
+    "titleTemplate": "{title}",
+    "ancestorSeparator": " › "
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix"
+    ],
+    "*.md": [
+      "npm run lint:md",
+      "npm run lint:text"
+    ]
+  }
+}
