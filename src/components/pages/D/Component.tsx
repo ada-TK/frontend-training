@@ -4,32 +4,23 @@ import {useEffect, useState} from 'react';
 const Component: React.VFC = () => {
   const [count, setCount] = useState({a: 0, b: 1});
 
+  console.log('d above useEffect');
+
   useEffect(() => {
     console.log('rendering');
     console.log(count);
   }, [count]);
 
   return (
-    <div>
-      {/* obj new わからない */}
-      {/* <Button
-        onClick={() => {
-          setCount({...count, c: 'c'});
-          console.log(count);
-        }}
-      >
-        new
-      </Button> */}
-      <Button
-        onClick={() => {
-          setCount({...count, b: count.b + 1});
-          console.log('----------');
-          console.log(count);
-        }}
-      >
-        add
-      </Button>
-    </div>
+    <Button
+      onClick={() => {
+        setCount({...count, b: count.b + 1});
+        console.log('----------');
+        console.log(count);
+      }}
+    >
+      D:カウントアップ
+    </Button>
   );
 };
 

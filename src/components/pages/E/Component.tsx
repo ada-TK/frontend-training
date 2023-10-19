@@ -1,7 +1,8 @@
-import {Box, Button} from '@material-ui/core';
+import {Button} from '@material-ui/core';
 import {useEffect, useState} from 'react';
 import {A, Root} from '..';
 
+// depsがobjectのコンポーネント
 const Component: React.VFC = () => {
   const [count, setCount] = useState({a: 0, b: 1});
   console.log('above useEffect');
@@ -21,41 +22,35 @@ const Component: React.VFC = () => {
 
   return (
     <>
-      <Box>
-        {/* obj new わからない */}
-        {/* <Button
+      {/* obj new わからない
+        <Button
+          onClick={() => {
+            setCount({...count, c: 'c'});
+            console.log(count);
+          }}
+        >
+          new
+        </Button> */}
+      <Button
         onClick={() => {
-          setCount({...count, c: 'c'});
-          console.log(count);
+          setCount({...count, b: count.b + 1});
+          console.log('----------');
+          console.log(`onclick内のb:${count.b}`);
         }}
       >
-        new
-      </Button> */}
-        <Button
-          onClick={() => {
-            setCount({...count, b: count.b + 1});
-            console.log('----------');
-            console.log(`onclick内のb:${count.b}`);
-          }}
-        >
-          add not deps
-        </Button>
-        <Button
-          onClick={() => {
-            setCount({...count, a: count.a + 1});
-            console.log('----------');
-            console.log(`onclick内のa:${count.a}`);
-          }}
-        >
-          add deps
-        </Button>
-      </Box>
-      <Box>
-        <Root />
-      </Box>
-      <Box>
-        <A />
-      </Box>
+        add not deps
+      </Button>
+      <Button
+        onClick={() => {
+          setCount({...count, a: count.a + 1});
+          console.log('----------');
+          console.log(`onclick内のa:${count.a}`);
+        }}
+      >
+        add deps
+      </Button>
+      <Root />
+      <A />
     </>
   );
 };

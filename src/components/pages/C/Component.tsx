@@ -1,6 +1,7 @@
 import {Button} from '@material-ui/core';
 import {useEffect, useState} from 'react';
 
+// depsがnum配列のコンポーネント
 const Component: React.VFC = () => {
   const [count, setCount] = useState([0]);
 

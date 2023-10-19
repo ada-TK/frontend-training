@@ -20,7 +20,7 @@ module.exports = {
         max: 6,
       },
     },
-    'textlint-rule-preset-ja-spacing': true,
+    // 'textlint-rule-preset-ja-spacing': true,
     prh: {
       rulePaths: ['./prh.yaml'],
     },

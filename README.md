@@ -1,4 +1,4 @@
-# frontend1.training
+# frontend_training
 
 ## 質問
 
