@@ -1,6 +1,5 @@
 import {Button} from '@material-ui/core';
 import {useEffect, useState} from 'react';
-import {A, D} from '..';
 
 // depsが未指定のコンポーネント
 const Component: React.VFC = () => {
@@ -27,8 +26,8 @@ const Component: React.VFC = () => {
       >
         Root:カウントアップ
       </Button>
-      <A />
-      <D />
+      {/* <A />
+      <D /> */}
     </>
   );
 };
